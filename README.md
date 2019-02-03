@@ -1,2 +1,1 @@
-# plant-monitoring
-combine project to one (Board, API, and App)
+<h1 align="center"> PLANT MONITORING </h1>
