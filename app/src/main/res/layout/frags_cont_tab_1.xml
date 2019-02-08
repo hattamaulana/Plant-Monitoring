@@ -1,0 +1,194 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.soilair.moisture.app.ActivityMain">
+
+    <TextView
+        android:id="@+id/txt_list_bold_data_kelembaban_udara"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="20"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_list_plingupdate" />
+
+    <TextView
+        android:id="@+id/txt_list_bold_satuan_kelembaban_udara"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="%"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/txt_list_bold_data_kelembaban_udara"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_list_plingupdate" />
+
+    <TextView
+        android:id="@+id/txt_list_bold_data_suhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="8dp"
+        android:text="20"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/txt_list_bold_satuan_suhu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txt_list_bold_satuan_kelembaban_udara"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_list_plingupdate" />
+
+    <TextView
+        android:id="@+id/txt_list_bold_satuan_suhu"
+        android:layout_width="39dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="8dp"
+        android:text="C"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/txt_list_bold_data_kelembaban"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txt_list_bold_data_suhu"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_list_plingupdate" />
+
+    <TextView
+        android:id="@+id/txt_list_bold_satuan_kelembaban"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="%"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_list_plingupdate" />
+
+    <TextView
+        android:id="@+id/txt_list_bold_data_kelembaban"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="1000"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/txt_list_bold_satuan_kelembaban"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_list_plingupdate" />
+
+    <TextView
+        android:id="@+id/txt_list_bold_sensor_kelembaban_udara"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Kelembaban Udara"
+        android:textAlignment="center"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/txt_list_bold_satuan_kelembaban_udara"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_list_bold_data_kelembaban_udara" />
+
+    <TextView
+        android:id="@+id/txt_list_bold_sensor_suhu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Suhu Udara"
+        android:textAlignment="center"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/txt_list_bold_satuan_suhu"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_list_bold_data_suhu"
+        app:layout_constraintTop_toBottomOf="@+id/txt_list_bold_data_kelembaban_udara" />
+
+    <TextView
+        android:id="@+id/txt_list_bold_sensor_kelembaban"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="Kelembaban Tanah"
+        android:textAlignment="center"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txt_list_bold_data_kelembaban"
+        app:layout_constraintTop_toBottomOf="@+id/txt_list_bold_data_kelembaban" />
+
+    <TextView
+        android:id="@+id/lbl_list_plingupdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Paling Update"
+        android:textAlignment="center"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_list_normal_sensor_kelembaban_udara"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Kelembaban Udara"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/txt_list_bold_sensor_kelembaban_udara"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_list_bold_sensor_kelembaban_udara" />
+
+    <TextView
+        android:id="@+id/txt_list_normal_sensor_suhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Suhu Udara"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/txt_list_bold_sensor_suhu"
+        app:layout_constraintStart_toStartOf="@+id/txt_list_bold_sensor_suhu"
+        app:layout_constraintTop_toBottomOf="@+id/txt_list_bold_sensor_kelembaban_udara" />
+
+    <TextView
+        android:id="@+id/txt_list_normal_sensor_kelembaban"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Kelembaban Tanah"
+        android:textAlignment="textEnd"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/txt_list_bold_sensor_kelembaban"
+        app:layout_constraintStart_toStartOf="@+id/txt_list_bold_sensor_kelembaban"
+        app:layout_constraintTop_toBottomOf="@+id/txt_list_bold_sensor_kelembaban_udara" />
+
+    <ListView
+        android:id="@+id/list_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_list_normal_sensor_kelembaban_udara" />
+</android.support.constraint.ConstraintLayout>
