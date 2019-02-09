@@ -42,7 +42,7 @@ public class ChartLine extends ArrayAdapter<Sensor> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_line_chart, parent, false);
+//            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_line_chart, parent, false);
         }
 
         // Log.d(TAG "getView: "+this.getCount());

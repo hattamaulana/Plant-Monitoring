@@ -42,21 +42,21 @@ public class SensorListController extends ArrayAdapter<Sensor> {
         // Set variabel view normal
         TextView nor_snsr_suhu          = (TextView) convertView.findViewById(R.id.txt_list_normal_sensor_suhu);
         TextView nor_snsr_klmbaban      = (TextView) convertView.findViewById(R.id.txt_list_normal_sensor_kelembaban);
-        TextView nor_data_suhu          = (TextView) convertView.findViewById(R.id.txt_list_normal_data_suhu);
-        TextView nor_data_lmbb          = (TextView) convertView.findViewById(R.id.txt_list_normal_data_kelebaban);
+//        TextView nor_data_suhu          = (TextView) convertView.findViewById(R.id.txt_list_normal_data_suhu);
+//        TextView nor_data_lmbb          = (TextView) convertView.findViewById(R.id.txt_list_normal_data_kelebaban);
         TextView nor_sat_suhu           = (TextView) convertView.findViewById(R.id.txt_list_normal_satuan_suhu);
         TextView nor_sat_lmbb           = (TextView) convertView.findViewById(R.id.txt_list_normal_satuan_kelembaban);
-        TextView nor_time               = (TextView) convertView.findViewById(R.id.txt_nor_time);
+//        TextView nor_time               = (TextView) convertView.findViewById(R.id.txt_nor_time);
 
         Sensor data_sensor = getItem(position);
         if (position == 0) {
             nor_snsr_suhu.setVisibility(View.GONE);
             nor_snsr_klmbaban.setVisibility(View.GONE);
-            nor_data_suhu.setVisibility(View.GONE);
-            nor_data_lmbb.setVisibility(View.GONE);
+//            nor_data_suhu.setVisibility(View.GONE);
+//            nor_data_lmbb.setVisibility(View.GONE);
             nor_sat_suhu.setVisibility(View.GONE);
             nor_sat_lmbb.setVisibility(View.GONE);
-            nor_time.setVisibility(View.GONE);
+//            nor_time.setVisibility(View.GONE);
 
             bld_data_suhu.setText(String.valueOf(data_sensor.getData_suhu()));
             bld_data_lmbb.setText(String.valueOf(data_sensor.getData_kelembaban()));
@@ -78,14 +78,14 @@ public class SensorListController extends ArrayAdapter<Sensor> {
                 nor_snsr_klmbaban.setVisibility(View.GONE);
             }
 
-            nor_data_suhu.setVisibility(View.VISIBLE);
-            nor_data_lmbb.setVisibility(View.VISIBLE);
+//            nor_data_suhu.setVisibility(View.VISIBLE);
+//            nor_data_lmbb.setVisibility(View.VISIBLE);
             nor_sat_suhu.setVisibility(View.VISIBLE);
             nor_sat_lmbb.setVisibility(View.VISIBLE);
-            nor_time.setVisibility(View.VISIBLE);
-
-            nor_data_suhu.setText(String.valueOf(data_sensor.getData_suhu()));
-            nor_data_lmbb.setText(String.valueOf(data_sensor.getData_kelembaban()));
+//            nor_time.setVisibility(View.VISIBLE);
+//
+//            nor_data_suhu.setText(String.valueOf(data_sensor.getData_suhu()));
+//            nor_data_lmbb.setText(String.valueOf(data_sensor.getData_kelembaban()));
         }
 
         return convertView;
