@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- new value-->
+    <color name="primaryDark">#FF18915D</color>
+    <color name="primary">#36d28f</color>
+
+    <!-- body -->
+    <color name="whiteBody">#E0F2F1</color>
+
+    <!-- old value -->
     <color name="fulScreenBackground">#009688</color>
     <color name="fulScreenNotification">#00796B</color>
     <color name="fulScreenNotification2">#BDBDBD</color>
