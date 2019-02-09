@@ -25,9 +25,7 @@ public class ActivityNotLoggedIn extends AppCompatActivity {
         String mesage = intent.getStringExtra("action");
         // mesage = "signin";
 
-        if (mesage.equals("launch_application"))
-            startActivity(new Intent(getApplicationContext(), ActivityMain.class));
-        else if (mesage.equals("signUp"))
+        if (mesage.equals("signUp"))
             setFragments(new ScreenStartNow());
         else if (mesage.equals("signIn"))
             setFragments(new SignIn());

@@ -78,7 +78,7 @@ public class ActivityLauncher extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.primaryDark));
         }
 
         setContentView(R.layout.activity_launcher);
@@ -97,9 +97,13 @@ public class ActivityLauncher extends AppCompatActivity {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 if (progres_pembanding == proggress.getMax()) {
-                    Intent intent = new Intent(getApplicationContext(), ActivityNotLoggedIn.class);
-                    intent.putExtra("action", action);
-                    startActivity(intent);
+                    if (action == "launch_application"){
+                        startActivity(new Intent(getApplicationContext(), ActivityMain.class));
+                    } else {
+                        Intent intent = new Intent(getApplicationContext(), ActivityNotLoggedIn.class);
+                        intent.putExtra("action", action);
+                        startActivity(intent);
+                    }
                 }
                 progres_pembanding++;
             }

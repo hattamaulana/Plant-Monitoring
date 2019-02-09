@@ -18,7 +18,7 @@ public class ScreenAppGuide extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frags_signup_screenappguide, container, false);
+        View view = inflater.inflate(R.layout.frags_afterinstall_2, container, false);
 
         Button skip = (Button) view.findViewById(R.id.btn_gapp_skip);
         skip.setOnClickListener(new View.OnClickListener() {
