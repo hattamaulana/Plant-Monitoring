@@ -29,7 +29,7 @@ public class ActivityUser extends AppCompatActivity {
 
         NAMA     = (TextView) findViewById(R.id.txt_pakn_nama);
         USERNAME = (TextView) findViewById(R.id.txt_pakn_username);
-        EMAIL    = (TextView) findViewById(R.id.txt_pakn_email);
+//        EMAIL    = (TextView) findViewById(R.id.txt_pakn_email);
 
         NAMA.setText(DataBase.SESSION_NAMA_USER);
         USERNAME.setText(DataBase.SESSION_USERNAME_USER);

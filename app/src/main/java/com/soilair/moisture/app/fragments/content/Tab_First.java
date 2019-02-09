@@ -45,21 +45,21 @@ public class Tab_First extends Fragment {
         listView.setFooterDividersEnabled(true);
         getJson();
 
-        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.tab1swipe);
-        swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent, R.color.colorPrimary);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        getJson();
-                        Snackbar.make(view, "Berhasil Syncronisasi data dengan Board Anda", Snackbar.LENGTH_LONG).show();
-                        swipeRefreshLayout.setRefreshing(false);
-                    }
-                }, 100);
-            }
-        });
+//        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.tab1swipe);
+//        swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent, R.color.colorPrimary);
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        getJson();
+//                        Snackbar.make(view, "Berhasil Syncronisasi data dengan Board Anda", Snackbar.LENGTH_LONG).show();
+//                        swipeRefreshLayout.setRefreshing(false);
+//                    }
+//                }, 100);
+//            }
+//        });
 
         return view;
     }

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:///mnt/Disk2/android/workspace/plant-monitoring/app/app.iml" filepath="/mnt/Disk2/android/workspace/plant-monitoring/app/app.iml" />
-      <module fileurl="file:///mnt/Disk2/android/workspace/plant-monitoring/plant-monitoring.iml" filepath="/mnt/Disk2/android/workspace/plant-monitoring/plant-monitoring.iml" />
+      <module fileurl="file:///mnt/Disk2/github/plant-monitoring/app/android/java/app/app.iml" filepath="/mnt/Disk2/github/plant-monitoring/app/android/java/app/app.iml" />
+      <module fileurl="file:///mnt/Disk2/github/plant-monitoring/app/android/java/java.iml" filepath="/mnt/Disk2/github/plant-monitoring/app/android/java/java.iml" />
     </modules>
   </component>
 </project>
