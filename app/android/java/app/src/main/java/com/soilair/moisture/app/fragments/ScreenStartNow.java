@@ -9,8 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.soilair.moisture.app.R;
-import com.soilair.moisture.app.fragments.signup.FormAddUser;
-import com.soilair.moisture.app.fragments.signup.ScreenAppGuide;
+import com.soilair.moisture.app.fragments.signup.RegisterForm;
 
 
 /**
@@ -30,7 +29,7 @@ public class ScreenStartNow extends Fragment
             @Override
             public void onClick(View view) {
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.fr_nt_loggin, new FormAddUser())
+                        .replace(R.id.fr_nt_loggin, new RegisterForm())
                         .addToBackStack(null)
                         .commit();
             }

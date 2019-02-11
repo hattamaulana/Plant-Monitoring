@@ -24,14 +24,14 @@
                 android:layout_marginTop="128dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="64dp"
-                app:layout_constraintBottom_toTopOf="@+id/txt_singup_name"
+                app:layout_constraintBottom_toTopOf="@+id/edtName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/img_registration" />
 
             <Button
-                android:id="@+id/btn_singin_login"
+                android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -50,12 +50,12 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/txt_singin_password"
+                android:id="@+id/edtPass"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="64dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/text_field_border"
                 android:ems="10"
                 android:hint="Password"
@@ -67,12 +67,12 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/btn_singin_login"
+                app:layout_constraintBottom_toTopOf="@+id/toLogin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/txt_singup_name"
+                android:id="@+id/edtName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -89,13 +89,13 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/txt_singup_email"
+                app:layout_constraintBottom_toTopOf="@+id/edtMail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/txt_singup_email"
+                android:id="@+id/edtMail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -112,9 +112,35 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/txt_singin_password"
+                app:layout_constraintBottom_toTopOf="@+id/edtPass"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/toLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="I Have Account"
+                android:textColor="@color/primaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+                app:layout_constraintEnd_toEndOf="@+id/edtPass" />
+
+            <TextView
+                android:id="@+id/forgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Forgot Password"
+                android:textColor="@color/primaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/toLogin"
+                app:layout_constraintEnd_toStartOf="@+id/toLogin"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/edtPass" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 

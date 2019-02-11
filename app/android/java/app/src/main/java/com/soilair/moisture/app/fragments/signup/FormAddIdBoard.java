@@ -29,7 +29,6 @@ import java.util.HashMap;
 public class FormAddIdBoard extends Fragment {
     private EditText id_board;
 
-    @SuppressLint("ResourceAsColor")
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -86,7 +85,7 @@ public class FormAddIdBoard extends Fragment {
                 if (s.equals("found")) {
                     Toast.makeText(getContext(), "Terima Kasih Telah menggunakan Product Kami", Toast.LENGTH_LONG).show();
                     getFragmentManager().beginTransaction()
-                            .replace(R.id.fr_nt_loggin, new FormAddUser())
+                            .replace(R.id.fr_nt_loggin, new RegisterForm())
                             .commit();
                 } else if (s.equals("notFound")) {
                     AlertDialog alert = new AlertDialog.Builder(getContext()).create();
