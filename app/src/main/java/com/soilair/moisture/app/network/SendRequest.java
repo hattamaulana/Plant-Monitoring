@@ -1,5 +1,7 @@
 package com.soilair.moisture.app.network;
 
+import android.util.Log;
+
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.ANRequest;
 import com.androidnetworking.common.Priority;
@@ -10,13 +12,16 @@ import com.soilair.moisture.app.models.Users;
 import java.util.HashMap;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 public class SendRequest {
     private static SendRequest instance = null;
-    private String host = "http://localhost:3000/database";
+    private String HOST = "http://192.168.1.12:3000/";
+    private String host;
     private String tag;
     private Priority priority;
     private HashMap<String, String> pathParam = null;
-    private HashMap<String, String> query = null;
+    private HashMap<String, String> queryParam = null;
     private HashMap<String, String> header = null;
 
     public static SendRequest getInstance(){
@@ -28,13 +33,18 @@ public class SendRequest {
     }
 
     public void get(ParsedRequestListener<List<Users>> requestListener) {
+        Log.d(TAG, "get: "+ getHost());
         ANRequest.GetRequestBuilder networking = AndroidNetworking.get(getHost());
 
-        if (this.pathParam != null)
+        if (this.pathParam != null) {
+            Log.d(TAG, "get: "+ this.pathParam);
             networking.addPathParameter(getPathParam());
+        }
 
-        if (this.query != null)
-            networking.addQueryParameter(getQuery());
+        if (this.queryParam != null) {
+            Log.d(TAG, "get: "+ this.queryParam);
+            networking.addQueryParameter(getQueryParam());
+        }
 
         if (this.header != null)
             networking.addHeaders(getHeader());
@@ -59,7 +69,7 @@ public class SendRequest {
     }
 
     public SendRequest setHost(String host) {
-        this.host = this.host + host;
+        this.host = this.HOST + host;
 
         return SendRequest.instance;
     }
@@ -93,12 +103,12 @@ public class SendRequest {
         return this;
     }
 
-    public HashMap<String, String> getQuery() {
-        return query;
+    public HashMap<String, String> getQueryParam() {
+        return queryParam;
     }
 
-    public SendRequest setQuery(HashMap<String, String> query) {
-        this.query = query;
+    public SendRequest setQueryParam(HashMap<String, String> queryParam) {
+        this.queryParam = queryParam;
         return this;
     }
 

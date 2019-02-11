@@ -4,84 +4,96 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/whiteBody">
 
     <EditText
-        android:id="@+id/txt_singin_username"
-        android:layout_width="0dp"
+        android:id="@+id/edtMail"
+        android:layout_width="347dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/text_field_border"
         android:ems="10"
-        android:hint="Username atau Email"
-        android:inputType="textPersonName"
-        android:paddingLeft="8dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="16dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:backgroundTint="@color/colorPrimary"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/edtPass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
-        app:layout_constraintStart_toEndOf="@+id/img_signin_userormail" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/edtPass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/text_field_border"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:paddingLeft="8dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="16dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtForgotPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img_signin_password" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="0dp"
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/button"
-        android:text="Masuk"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_circle"
+        android:paddingStart="32dp"
+        android:paddingLeft="32dp"
+        android:paddingEnd="32dp"
+        android:paddingRight="32dp"
+        android:text="login"
         android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/img_signin_userormail"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_singin_username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_account_box_black_24dp"
-        tools:ignore="VectorDrawableCompat" />
-
-    <ImageView
-        android:id="@+id/img_signin_password"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/edtPass"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_lock_black_24dp"
-        tools:ignore="VectorDrawableCompat" />
-
     <TextView
-        android:id="@+id/txt_signin_lupapasswd"
+        android:id="@+id/txtForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:layout_marginStart="8dp"
-        android:text="Lupa Password ?"
+        android:layout_marginBottom="32dp"
+        android:text="Forgot Password"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
-        app:layout_constraintStart_toEndOf="@+id/img_signin_password" />
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintStart_toStartOf="@+id/edtPass" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="220dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtMail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_smartphone_hand" />
 
 </android.support.constraint.ConstraintLayout>
