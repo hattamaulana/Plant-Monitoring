@@ -37,15 +37,14 @@ public class SignIn extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frags_signin, container, false);
 
-        TextView textView = (TextView) view.findViewById(R.id.txt_signin_lupapasswd);
-        Button loginButton = (Button) view.findViewById(R.id.btnRegister);
+        TextView textView = (TextView) view.findViewById(R.id.txtForgotPassword);
+        Button loginButton = (Button) view.findViewById(R.id.btnLogin);
 
-        username  = (EditText) view.findViewById(R.id.txt_singin_username);
+        username  = (EditText) view.findViewById(R.id.edtMail);
         password  = (EditText) view.findViewById(R.id.edtPass);
 
         HashMap<String, String> datas = new HashMap<>();
         datas.put(Users.EMAIL, username.getText().toString());
-        datas.put(Users.PASSWORD, password.getText().toString());
 
         textView.setOnClickListener(onClickForgetPassword());
         loginButton.setOnClickListener(onClickLoginButton(datas));
@@ -58,11 +57,12 @@ public class SignIn extends Fragment {
 
             @Override
             public void onClick(View view) {
+                Log.d(TAG, "onClick: Response : Waitiiing ..........." );
                 SendRequest.getInstance()
-                        .setPathParam(params)
-                        .setHost("users/")
+                        .setQueryParam(params)
+                        .setHost("users")
                         .setTag("register")
-                        .setPriority(Priority.MEDIUM)
+                        .setPriority(Priority.HIGH)
                         .get(requestListener());
             }
         };

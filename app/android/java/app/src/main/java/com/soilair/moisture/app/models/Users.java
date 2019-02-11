@@ -6,7 +6,7 @@ public class Users {
     public static String FIRST_NAME;
     public static String LAST_NAME;
     public static String PHOTO;
-    public static String EMAIL;
+    public static String EMAIL = "email";
     public static String PASSWORD;
     public static String GENDER;
     public static String COUNTRY;
