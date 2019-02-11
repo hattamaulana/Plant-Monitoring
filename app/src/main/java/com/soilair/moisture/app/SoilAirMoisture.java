@@ -2,6 +2,7 @@ package com.soilair.moisture.app;
 
 import android.app.Application;
 
+import com.androidnetworking.AndroidNetworking;
 import com.facebook.stetho.Stetho;
 
 /**
@@ -12,6 +13,13 @@ public class SoilAirMoisture extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        /**
+         * initialize library
+         * Facebook Stetho
+         * Android Fast Networking
+         */
         Stetho.initializeWithDefaults(this);
+        AndroidNetworking.initialize(this);
     }
 }

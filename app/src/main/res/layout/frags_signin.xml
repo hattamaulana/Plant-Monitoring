@@ -19,13 +19,13 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/txt_singin_password"
+        app:layout_constraintBottom_toTopOf="@+id/edtPass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toEndOf="@+id/img_signin_userormail" />
 
     <EditText
-        android:id="@+id/txt_singin_password"
+        android:id="@+id/edtPass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
@@ -37,12 +37,12 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/btn_singin_login"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_signin_password" />
 
     <Button
-        android:id="@+id/btn_singin_login"
+        android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/button"
@@ -67,7 +67,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_singin_password"
+        app:layout_constraintBottom_toBottomOf="@+id/edtPass"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_lock_black_24dp"
         tools:ignore="VectorDrawableCompat" />
@@ -81,7 +81,7 @@
         android:text="Lupa Password ?"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_singin_login"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintStart_toEndOf="@+id/img_signin_password" />
 
 </android.support.constraint.ConstraintLayout>
