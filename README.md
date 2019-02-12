@@ -2,8 +2,3 @@
 
 ### Topology
 <img align="center" src="img/Document 1.png" />
-
-### Requirements
-- Arduino
-- Soil Air Moisture Sensor
-- DHT11 Sensor
