@@ -25,7 +25,5 @@ public class SoilAirMoisture extends Application {
         Stetho.initializeWithDefaults(this);
 
         AndroidNetworking.initialize(this);
-        AndroidNetworking.enableLogging();
-        AndroidNetworking.enableLogging(HttpLoggingInterceptor.Level.HEADERS);
     }
 }

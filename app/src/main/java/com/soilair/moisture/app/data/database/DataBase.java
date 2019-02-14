@@ -57,14 +57,14 @@ public final class DataBase {
     public static final String JSON_ID_DATA_BOARD = "id_data_board";
     public static final String JSON_ID_BOARD      = "id_board";
 
-    // Table Users
+    // Table User
     public static final String ID_DATA_USERS    = "id_data_users";
     public static final String NAMA_USER        = "nama_user";
     public static final String EMAIL_USER       = "email_user";
     public static final String USERNAME_USER    = "username_user";
     public static final String PASSWORD_USER    = "password_user";
 
-    // Key JSON Users
+    // Key JSON User
     public static final String JSON_ID_DATA_USERS    = "user";
     public static final String JSON_NAMA_USER        = "nama_user";
     public static final String JSON_EMAIL_USER       = "email_user";
