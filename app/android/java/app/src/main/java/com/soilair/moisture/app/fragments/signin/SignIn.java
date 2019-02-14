@@ -11,16 +11,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.ParsedRequestListener;
+import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.soilair.moisture.app.R;
 import com.soilair.moisture.app.models.Users;
-import com.soilair.moisture.app.network.SendRequest;
+import com.soilair.moisture.app.models.pojo.User;
+import com.soilair.moisture.app.network.Api;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
@@ -29,60 +36,56 @@ import static android.content.ContentValues.TAG;
  */
 
 public class SignIn extends Fragment {
-    private EditText username;
-    private EditText password;
+    private EditText mail;
+    private EditText pass;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frags_signin, container, false);
-
         TextView textView = (TextView) view.findViewById(R.id.txtForgotPassword);
         Button loginButton = (Button) view.findViewById(R.id.btnLogin);
 
-        username  = (EditText) view.findViewById(R.id.edtMail);
-        password  = (EditText) view.findViewById(R.id.edtPass);
-
-        HashMap<String, String> datas = new HashMap<>();
-        datas.put(Users.EMAIL, username.getText().toString());
+        mail = (EditText) view.findViewById(R.id.edtMail);
+        pass = (EditText) view.findViewById(R.id.edtPass);
 
         textView.setOnClickListener(onClickForgetPassword());
-        loginButton.setOnClickListener(onClickLoginButton(datas));
+        loginButton.setOnClickListener(onClickLoginButton());
 
         return view;
     }
 
-    private View.OnClickListener onClickLoginButton(final HashMap<String, String> params){
+    private View.OnClickListener onClickLoginButton(){
         return new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: Response : Waitiiing ..........." );
-                SendRequest.getInstance()
-                        .setQueryParam(params)
-                        .setHost("users")
-                        .setTag("register")
+                AndroidNetworking.get(Api.HOST_USER)
+                        .addQueryParameter(Api.EMAIL, mail.getText().toString())
+                        .setTag("login")
                         .setPriority(Priority.HIGH)
-                        .get(requestListener());
+                        .build()
+                        .getAsJSONArray(requestListener());
             }
         };
-
     }
 
-    private ParsedRequestListener<List<Users>> requestListener(){
-        return new ParsedRequestListener<List<Users>>() {
+    private JSONArrayRequestListener requestListener(){
+        return new JSONArrayRequestListener() {
             @Override
-            public void onResponse(List<Users> response) {
-                Log.d(TAG, "onResponse: "+ response.size());
+            public void onResponse(JSONArray response) {
+                // when success do
+                if (response.length() < 1)
+                    Toast.makeText(getContext(), "Username wrong", Toast.LENGTH_SHORT).show();
 
-                for (Users user: response){
-                    Log.d(TAG, "email: "+ user.getEmail());
-                }
+                for (User user: Users.getUsers(response))
+                    if (user.getPassword().equals(pass.getText().toString().trim()))
+                        Toast.makeText(getContext(), "Logged", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError(ANError anError) {
-
+                // handle error
+                Toast.makeText(getContext(), "error" + anError.getErrorDetail(), Toast.LENGTH_SHORT).show();
             }
         };
     }
@@ -131,7 +134,7 @@ public class SignIn extends Fragment {
 //
 //    private void request () {
 //
-//        class SendRequest extends AsyncTask<Void, Void, String> {
+//        class Api extends AsyncTask<Void, Void, String> {
 //            @Override
 //            protected void onPreExecute() {
 //                super.onPreExecute();
@@ -171,7 +174,7 @@ public class SignIn extends Fragment {
 //            }
 //        }
 //
-//        SendRequest sendRequest = new SendRequest();
+//        Api sendRequest = new Api();
 //        sendRequest.execute();
 //    }
 }

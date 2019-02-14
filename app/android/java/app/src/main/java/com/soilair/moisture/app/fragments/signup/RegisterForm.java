@@ -17,7 +17,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.soilair.moisture.app.ActivityMain;
 import com.soilair.moisture.app.R;
-import com.soilair.moisture.app.network.SendRequest;
+import com.soilair.moisture.app.network.Api;
 import com.soilair.moisture.app.fragments.signin.LupaPassword;
 import com.soilair.moisture.app.fragments.signin.SignIn;
 
@@ -63,10 +63,10 @@ public class RegisterForm extends Fragment {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SendRequest.getInstance()
-                        .setTag("register")
-                        .setPriority(Priority.MEDIUM)
-                        .post(params, requestListener());
+//                Api.getInstance()
+//                        .setTag("register")
+//                        .setPriority(Priority.MEDIUM)
+//                        .post(params, requestListener());
             }
         };
     }
