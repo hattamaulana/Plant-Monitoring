@@ -1,4 +1,4 @@
-package com.soilair.moisture.app;
+package com.soilair.moisture.app.view.activities;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -18,6 +18,9 @@ import android.preference.RingtonePreference;
 import android.support.v7.app.ActionBar;
 import android.text.TextUtils;
 import android.view.MenuItem;
+
+import com.soilair.moisture.app.AppCompatPreferenceActivity;
+import com.soilair.moisture.app.R;
 
 import java.util.List;
 
