@@ -22,8 +22,8 @@ public class Tab_Third extends Fragment {
 //        TextView nama = (TextView) view.findViewById(R.id.txt_tab3_nama);
 //        TextView username = (TextView) view.findViewById(R.id.txt_tab3_username);
 //
-//        nama.setText(DataBase.SESSION_NAMA_USER);
-//        username.setText(DataBase.SESSION_USERNAME_USER);
+//        nama.setText(SQLite.SESSION_NAMA_USER);
+//        username.setText(SQLite.SESSION_USERNAME_USER);
 
         return view;
     }

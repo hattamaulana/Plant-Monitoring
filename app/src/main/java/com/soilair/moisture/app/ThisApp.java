@@ -12,7 +12,7 @@ import okhttp3.OkHttpClient;
  * Created by User on 20/02/2018.
  */
 
-public class SoilAirMoisture extends Application {
+public class ThisApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

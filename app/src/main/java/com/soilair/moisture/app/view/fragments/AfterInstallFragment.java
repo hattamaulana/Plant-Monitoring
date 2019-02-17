@@ -1,4 +1,4 @@
-package com.soilair.moisture.app.fragments;
+package com.soilair.moisture.app.view.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,14 +9,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.soilair.moisture.app.R;
-import com.soilair.moisture.app.fragments.signup.RegisterForm;
 
 
 /**
  * Created by User on 15/02/2018.
  */
 
-public class ScreenStartNow extends Fragment
+public class AfterInstallFragment extends Fragment
 {
 
     @Nullable
@@ -29,7 +28,7 @@ public class ScreenStartNow extends Fragment
             @Override
             public void onClick(View view) {
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.fr_nt_loggin, new RegisterForm())
+                        .replace(R.id.fr_nt_loggin, new RegisterFragment())
                         .addToBackStack(null)
                         .commit();
             }

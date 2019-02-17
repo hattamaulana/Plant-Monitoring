@@ -1,4 +1,4 @@
-package com.soilair.moisture.app.data.database;
+package com.soilair.moisture.app.network.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,33 +11,32 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteHelper extends SQLiteOpenHelper {
 
     public SQLiteHelper(Context context) {
-        super(context, DataBase.DATABASE_NAME, null, DataBase.DATABASE_VERSION);
+        super(context, SQLite.DATABASE_NAME, null, SQLite.DATABASE_VERSION);
     }
 
-    // Membuat Table Session APK
     private static final String CREATE_TABLE_SESSION_APP =
-            "CREATE TABLE " + DataBase.SessionApp.TABlE_NAME + " (" +
-                    DataBase.SessionApp.COLOUMN_ID_PERNAH_SIGNUP + " INT, " +
-                    DataBase.SessionApp.COLOUMN_PERNAH_SIGNUP + " INT " +
+            "CREATE TABLE " + SQLite.SessionApp.TABlE_NAME + " (" +
+                    SQLite.SessionApp.COLOUMN_PERNAH_SIGNUP + " TEXT " +
             ")";
 
-    // Membuat Table Session User
     private static final String CREATE_TABLE_SESSION_USER =
-            "CREATE TABLE " + DataBase.SessionUser.TABLE_NAME + " (" +
-                    DataBase.SessionUser.COLOUMN_ID_SESSION_USER     + " INTEGER PRIMARY KEY,  " +
-                    DataBase.SessionUser.COLOUMN_NAME   + " TEXT, " +
-                    DataBase.SessionUser.COLOUMN_EMAIL + " TEXT, " +
-                    DataBase.SessionUser.COLOUMN_USERNAME + " TEXT, " +
-                    DataBase.SessionUser.COLOUMN_ID_BOARD + " INTEGER " +
+            "CREATE TABLE " + SQLite.SessionUser.TABLE_NAME + " (" +
+                    SQLite.SessionUser.ID_USER     + " INTEGER PRIMARY KEY,  " +
+                    SQLite.SessionUser.FIRST_NAME   + " TEXT, " +
+                    SQLite.SessionUser.LAST_NAME + " TEXT, " +
+                    SQLite.SessionUser.EMAIL + " TEXT, " +
+                    SQLite.SessionUser.PASSWORD + " TEXT, " +
+                    SQLite.SessionUser.PHOTO + " TEXT, " +
+                    SQLite.SessionUser.GENDER + " TEXT, " +
+                    SQLite.SessionUser.COUNTRY + " TEXT, " +
+                    SQLite.SessionUser.CITY + " TEXT " +
             ")";
 
-    // Menghapus Table Session Apk
     private static final String DELETE_TABLE_SESSION_APP =
-            "DROP TABLE IF EXISTS " + DataBase.SessionApp.TABlE_NAME;
+            "DROP TABLE IF EXISTS " + SQLite.SessionApp.TABlE_NAME;
 
-    // Menghapus Tabel Session User
     private static final String DELETE_TABLE_SESSION_USER =
-            "DROP TABLE IF EXISTS " + DataBase.SessionUser.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + SQLite.SessionUser.TABLE_NAME;
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {

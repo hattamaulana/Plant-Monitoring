@@ -17,8 +17,8 @@ import android.widget.Toast;
 
 import com.soilair.moisture.app.R;
 import com.soilair.moisture.app.data.Validation;
-import com.soilair.moisture.app.data.database.DataBase;
-import com.soilair.moisture.app.data.database.MySQLRequest;
+import com.soilair.moisture.app.network.database.SQLite;
+import com.soilair.moisture.app.view.fragments.RegisterFragment;
 
 import java.util.HashMap;
 
@@ -43,8 +43,8 @@ public class FormAddIdBoard extends Fragment {
             @Override
             public void onClick(View view) {
                 if (Validation.isEmpty(id_board)) {
-                    DataBase.SESSION_BOARD = id_board.getText().toString();
-                    cekId();
+                    SQLite.SESSION_BOARD = id_board.getText().toString();
+//                    cekId();
                 } else {
                     Toast.makeText(getContext(), "Maaf, isi id board yang benar", Toast.LENGTH_SHORT).show();
                 }
@@ -54,55 +54,55 @@ public class FormAddIdBoard extends Fragment {
         return view;
     }
 
-    private void cekId () {
-
-        class cekId extends AsyncTask<Void, Void, String> {
-            ProgressDialog loading;
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show
-                        ( getContext(), "Mengecek Id Board", "Silahkan Tunggu", false, false );
-            }
-
-            @Override
-            protected String doInBackground(Void... voids) {
-                HashMap<String, String> params = new HashMap<>();
-                params.put("action", "cek_id");
-                params.put(DataBase.ID_BOARD, DataBase.SESSION_BOARD);
-
-                MySQLRequest sendRequest = new MySQLRequest();
-                String result = sendRequest.sendPostRequest(DataBase.URL_POST_DATABASE, params);
-                return result;
-            }
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                loading.dismiss();
-
-                if (s.equals("found")) {
-                    Toast.makeText(getContext(), "Terima Kasih Telah menggunakan Product Kami", Toast.LENGTH_LONG).show();
-                    getFragmentManager().beginTransaction()
-                            .replace(R.id.fr_nt_loggin, new RegisterForm())
-                            .commit();
-                } else if (s.equals("notFound")) {
-                    AlertDialog alert = new AlertDialog.Builder(getContext()).create();
-                    alert.setTitle("Hasil Mengecek Id Board");
-                    alert.setMessage("Maaf, Id Board yang anda Masukkan tidak cocok dengan data board yang ada," +
-                            " silahkan teliti ulang");
-                    alert.show();
-                } else if (s.equals("Connection_error")){
-                    AlertDialog alert = new AlertDialog.Builder(getContext()).create();
-                    alert.setTitle("Koneksi Error");
-                    alert.setMessage("Maaf Smartphone anda tidak terhubung dengan board, silahkan cek koneksi anda. Terimakasih.");
-                    alert.show();
-                }
-            }
-        }
-
-        cekId cekId = new cekId();
-        cekId.execute();
-    }
+//    private void cekId () {
+//
+//        class cekId extends AsyncTask<Void, Void, String> {
+//            ProgressDialog loading;
+//
+//            @Override
+//            protected void onPreExecute() {
+//                super.onPreExecute();
+//                loading = ProgressDialog.show
+//                        ( getContext(), "Mengecek Id Board", "Silahkan Tunggu", false, false );
+//            }
+//
+//            @Override
+//            protected String doInBackground(Void... voids) {
+//                HashMap<String, String> params = new HashMap<>();
+//                params.put("action", "cek_id");
+//                params.put(SQLite.ID_BOARD, SQLite.SESSION_BOARD);
+//
+//                MySQLRequest sendRequest = new MySQLRequest();
+//                String result = sendRequest.sendPostRequest(SQLite.URL_POST_DATABASE, params);
+//                return result;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String s) {
+//                super.onPostExecute(s);
+//                loading.dismiss();
+//
+//                if (s.equals("found")) {
+//                    Toast.makeText(getContext(), "Terima Kasih Telah menggunakan Product Kami", Toast.LENGTH_LONG).show();
+//                    getFragmentManager().beginTransaction()
+//                            .replace(R.id.fr_nt_loggin, new RegisterFragment())
+//                            .commit();
+//                } else if (s.equals("notFound")) {
+//                    AlertDialog alert = new AlertDialog.Builder(getContext()).create();
+//                    alert.setTitle("Hasil Mengecek Id Board");
+//                    alert.setMessage("Maaf, Id Board yang anda Masukkan tidak cocok dengan data board yang ada," +
+//                            " silahkan teliti ulang");
+//                    alert.show();
+//                } else if (s.equals("Connection_error")){
+//                    AlertDialog alert = new AlertDialog.Builder(getContext()).create();
+//                    alert.setTitle("Koneksi Error");
+//                    alert.setMessage("Maaf Smartphone anda tidak terhubung dengan board, silahkan cek koneksi anda. Terimakasih.");
+//                    alert.show();
+//                }
+//            }
+//        }
+//
+//        cekId cekId = new cekId();
+//        cekId.execute();
+//    }
 }
